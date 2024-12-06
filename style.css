@@ -132,28 +132,34 @@ footer {
     color: #bbbbbb;
 }
 
+
 /* Light/Dark Mode Toggle */
 .theme-toggle {
     position: absolute;
+    /* Position relative to the header */
     top: 20px;
+    /* Distance from the top */
     right: 20px;
+    /* Distance from the right */
 }
 
 .theme-toggle svg {
     width: 30px;
-    /* Adjust icon size */
+    /* Size of the SVG */
     height: 30px;
     cursor: pointer;
+    /* Change cursor to pointer on hover */
     transition: transform 0.3s, stroke 0.3s;
-    /* Smooth transitions for hover and theme changes */
+    /* Smooth transitions */
 }
 
 .theme-toggle svg:hover {
     transform: scale(1.2);
-    /* Slight zoom effect */
+    /* Slight zoom effect on hover */
     stroke: #4caf50;
     /* Change stroke color on hover */
 }
+
 
 /* Light Mode SVG Styling */
 body.light-mode .theme-toggle svg {
