@@ -90,3 +90,24 @@ footer {
     margin-top: 3rem;
     color: #bbbbbb;
 }
+/* Light/Dark Mode Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background-color: #3a8f3f;
+}
