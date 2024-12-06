@@ -9,10 +9,26 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
 body {
-    background: #080808;
-    color: #fff;
+    height: 100%;
+    /* Full-height layout to ensure proper footer placement */
+    display: flex;
+    flex-direction: column;
 }
+
+body {
+    margin: 0;
+    /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+#contact {
+    flex: 1;
+    /* This ensures the content pushes the footer to the bottom when necessary */
+}
+
 
 #header {
     width: 110%;
@@ -362,10 +378,12 @@ form .btn2 {
     background: #262626;
     font-weight: 500;
     margin-top: auto;
-    /* Pushes the footer to the bottom */
     position: relative;
-    /* Removes the fixed position */
+    /* This ensures it scrolls with the content */
+    bottom: 0;
+    left: 0;
 }
+
 
 .copyright i {
     color: #0400ff
