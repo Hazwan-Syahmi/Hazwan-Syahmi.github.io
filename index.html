@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="container">
             <h1>Hazwan Syahmi</h1>
             <p>Cybersecurity Enthusiast | Software Developer</p>
         </div>
- <div class="theme-toggle">
-        <button id="theme-button">☀️</button>
-    </div>
+        <!-- Theme Toggle Button -->
+        <div class="theme-toggle">
+            <span id="theme-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </span>
+        </div>
     </header>
 
     <nav>
@@ -33,7 +42,9 @@
     <main>
         <section id="about" class="container">
             <h2>About Me</h2>
-            <p>Hello! I am Hazwan Syahmi, a passionate cybersecurity enthusiast with a strong interest in software development. I specialize in penetration testing, digital forensics, and developing secure applications.</p>
+            <p>Hello! I am Hazwan Syahmi, a passionate cybersecurity enthusiast with a strong interest in software
+                development. I specialize in penetration testing, digital forensics, and developing secure applications.
+            </p>
         </section>
 
         <section id="projects" class="container">
@@ -45,7 +56,8 @@
             </div>
             <div class="project">
                 <h3>Hikenity</h3>
-                <p>A hiking trip management app built with Firebase and Stripe integration for seamless trip bookings.</p>
+                <p>A hiking trip management app built with Firebase and Stripe integration for seamless trip bookings.
+                </p>
                 <a href="https://github.com/your-repo" target="_blank">View Project</a>
             </div>
         </section>
@@ -81,5 +93,32 @@
     <footer>
         <p>&copy; 2024 Hazwan Syahmi. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript for Theme Toggle -->
+    <script>
+        const themeIcon = document.getElementById('theme-icon');
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+
+            // Update the SVG for light or dark mode
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M18.72 18.72l-1.06-1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M18.72 5.28l-1.06 1.06M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                `;
+            } else {
+                themeIcon.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                    </svg>
+                `;
+            }
+        }
+
+        themeIcon.addEventListener('click', toggleTheme);
+    </script>
 </body>
+
 </html>

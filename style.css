@@ -5,10 +5,51 @@ body {
     padding: 0;
     background-color: #121212;
     color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for theme changes */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #4caf50;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #4caf50;
+}
+
+body.light-mode header {
+    background-color: #f0f0f0;
+}
+
+body.light-mode nav {
+    background-color: #dddddd;
+}
+
+body.light-mode nav ul li a {
+    color: #000000;
+}
+
+body.light-mode nav ul li a:hover {
+    color: #4caf50;
+}
+
+body.light-mode footer {
+    background-color: #f0f0f0;
+    color: #666666;
+}
+
+body.light-mode .project {
+    background-color: #f8f8f8;
 }
 
 /* Header */
@@ -90,6 +131,7 @@ footer {
     margin-top: 3rem;
     color: #bbbbbb;
 }
+
 /* Light/Dark Mode Toggle */
 .theme-toggle {
     position: absolute;
@@ -97,17 +139,29 @@ footer {
     right: 20px;
 }
 
-.theme-toggle button {
-    background-color: #4caf50;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+.theme-toggle svg {
+    width: 30px;
+    /* Adjust icon size */
+    height: 30px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s, stroke 0.3s;
+    /* Smooth transitions for hover and theme changes */
 }
 
-.theme-toggle button:hover {
-    background-color: #3a8f3f;
+.theme-toggle svg:hover {
+    transform: scale(1.2);
+    /* Slight zoom effect */
+    stroke: #4caf50;
+    /* Change stroke color on hover */
+}
+
+/* Light Mode SVG Styling */
+body.light-mode .theme-toggle svg {
+    stroke: #000000;
+    /* Change stroke color for light mode */
+}
+
+body.light-mode .theme-toggle svg:hover {
+    stroke: #4caf50;
+    /* Hover effect in light mode */
 }
