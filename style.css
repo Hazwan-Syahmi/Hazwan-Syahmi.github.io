@@ -355,24 +355,13 @@ form .btn2 {
     cursor: pointer;
 }
 
-/* Footer Styling */
 .copyright {
     width: 100%;
-    position: fixed;
-    /* Ensures it stays at the bottom */
-    bottom: 0;
-    left: 0;
-    background: #262626;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    z-index: 1000;
-    border-top: 1px solid #444;
-}
-
-.copyright p {
-    margin: 0;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 500;
+    margin-top: 20px;
 }
 
 .copyright i {
