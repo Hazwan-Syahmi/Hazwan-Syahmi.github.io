@@ -373,16 +373,25 @@ form .btn2 {
 
 .copyright {
     width: 100%;
+    position: fixed;
+    /* Fixes the footer to the bottom */
+    bottom: 0;
+    /* Aligns it to the bottom */
+    left: 0;
+    /* Ensures it stretches from the left */
+    background: #262626;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    background: #262626;
-    font-weight: 500;
-    margin-top: auto;
-    position: relative;
-    /* This ensures it scrolls with the content */
-    bottom: 0;
-    left: 0;
+    font-size: 14px;
+    z-index: 1000;
+    /* Ensures it appears above other elements */
+    margin: 0;
+    /* Removes any default margin */
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.3);
+    /* Optional shadow for aesthetics */
 }
+
 
 
 .copyright i {
