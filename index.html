@@ -1,83 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazwan Syahmi Portfolio</title>
+    <meta charset="ÜTF-8">
+    <meta http-equiv="" X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.8">
+    <title>Hazwan Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/9874ba2c41.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
+    <div id="header">
         <div class="container">
-            <h1>Hazwan Syahmi</h1>
-            <p>Cybersecurity Enthusiast | Software Developer</p>
+            <nav>
+                <img src="images/logo1.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Cybersecurity | Real Estate Negotiator</p>
+                <h1>Hi, I'm <span>Hazwan Syahmi</span><br>Mohd Rizman</h1>
+            </div>
         </div>
-    </header>
+    </div>
+    <!-- -------------about------------ -->
+    <div id="about">
+        <div class="çontainer">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/ab3.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I'm a cybersecurity professional with a strong foothold in property management. In the realm of
+                        cybersecurity, I specialize in ethical hacking, risk assessment, and implementing cutting-edge
+                        security measures. <br> Simultaneously, I navigate the property business, excelling in
+                        identifying lucrative opportunities, negotiating deals, and optimizing portfolios. My unique
+                        skill set seamlessly integrates technology into property management, ensuring efficiency and a
+                        top-notch experience. I'm a continuous learner committed to making a positive impact in both the
+                        cybersecurity and property domains.</p>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="about" class="container">
-            <h2>About Me</h2>
-            <p>Hello! I am Hazwan Syahmi, a passionate cybersecurity enthusiast with a strong interest in software
-                development. I specialize in penetration testing, digital forensics, and developing secure applications.
-            </p>
-        </section>
-
-        <section id="projects" class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Anti-Keylogger App</h3>
-                <p>A Flutter-based Android application to detect malicious keyloggers and protect user data.</p>
-                <a href="https://github.com/your-repo" target="_blank">View Project</a>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Desinging Web/App Interface</li><br>
+                            <li><span>PROPERTY</span><br>Help people to buy/sell/rent their house</li><br>
+                            <li><span>PENTEST</span><br>Intermediate in use Kali</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>CTF COMPETITON</span><br>Participated in UNIKL/APU/USIM/Bahtera Cyber CTF</li><br>
+                            <li><span>PROPERTY</span><br>Attend property class</li><br>
+                            <li><span>HACKING</span><br>Do some pentesting on some website</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2015-2019</span><br>SMA-MAIWP</li><br>
+                            <li><span>2020-2021</span><br>Perlis Matrix in Module 3</li><br>
+                            <li><span>2021-2025</span><br>Bachelor Degree in Information Security Assurance, USIM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-----------------services------------------>
+            <div id="services">
+                <div class="container">
+                    <h1 class="sub-title">My Services</h1>
+                    <div class="services-list">
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <h2>Web Design</h2>
+                            <p>
+                                I craft visually stunning and user-friendly websites tailored to your brand, ensuring a
+                                seamless online presence that captivates your audience and enhances your business
+                                objectives.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-house"></i>
+                            <h2>Property Agent</h2>
+                            <p>
+                                Unlock your dream home with our expert property services. As dedicated agents, we
+                                navigate the market to find or sell your property seamlessly, ensuring satisfaction at
+                                every step.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-shield"></i>
+                            <h2>Pentesting</h2>
+                            <p>
+                                Enhance your digital security with our penetration testing services. Our expert team
+                                simulates cyber attacks to identify vulnerabilities, fortifying your systems and
+                                ensuring robust protection against potential threats.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </section>
+            <!-------------portfolio------------->
+            <div id="portfolio">
+                <div class="container">
+                    <h1 class="sub-title">My Work</h1>
+                    <div class="work-list">
+                        <div class="work">
+                            <img src="images/work-1.png">
+                            <div class="layer">
+                                <h3> Social Media App</h3>
+                                <p>The app connects you to the talented people around the wolrd.</p>
+                                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work">
+                            <img src="images/work-2.png">
+                            <div class="layer">
+                                <h3> Buy | Sell Property</h3>
+                                <p>Empowered clients with strategic insights, facilitating seamless property sales.
+                                    Achieved success by optimizing listings, negotiating effectively, and exceeding
+                                    expectations.</p>
+                                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work">
+                            <img src="images/work-3.png">
+                            <div class="layer">
+                                <h3> Online App</h3>
+                                <p>The app connects you to the talented people around the wolrd.</p>
+                                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="skills" class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Penetration Testing</li>
-                <li>Digital Forensics</li>
-                <li>Android Development (Java, Flutter)</li>
-                <li>Machine Learning</li>
-                <li>Cloud Security</li>
-            </ul>
-        </section>
+                    <a href="#" class="btn">See More</a>
+                </div>
+            </div>
 
-        <section id="certifications" class="container">
-            <h2>Certifications</h2>
-            <ul>
-                <li>CompTIA Cloud+</li>
-                <li>Certified Ethical Hacker (CEH)</li>
-                <li>Google Cybersecurity Certificate</li>
-            </ul>
-        </section>
+            <!--------contact---------->
 
-        <section id="contact" class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:hazwan.syahmi@example.com">hazwan.syahmi@example.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">Your LinkedIn</a></p>
-            <p>GitHub: <a href="https://github.com/Hazwan-Syahmi" target="_blank">Hazwan-Syahmi</a></p>
-        </section>
-    </main>
+            <div id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-left">
+                            <h1 class="sub=title">Contact Me</h1>
+                            <p><i class="fa-solid fa-paper-plane"></i> sy4hmeee@gmail.com</p>
+                            <p><i class="fa-solid fa-square-phone"></i> 011-60670595</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/profile.php?id=61556990519882&mibextid=uzlsIk"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/hzwn.syhmx?igsh=NjdjdDNteTExb3Q5&utm_source=qr"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/in/mohammad-hazwan-syahmi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://www.tiktok.com/@hzwnsyhmx?_t=8kbRGWVpQqf&_r=1"><i
+                                        class="fa-brands fa-tiktok"></i></a>
+                            </div>
+                            <a href="images/Hazwan's Resume.pdf" download class="btn btn2">Download CV</a>
+                        </div>
+                        <div class="contact-right">
+                            <form name="submit-to-google-sheet">
+                                <input type="text" name="Name" placeholder="Your Name" required>
+                                <input type="email" name="Email" placeholder="Your Email" required>
+                                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                                <button type="submit" class="btn btn2">Submit</button>
+                            </form>
+                            <span id="msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Copyright @ Hazwan Syahmi Mohd Rizman <i class="fa-solid fa-house"></i></p>
+                </div>
+            </div>
+            <script>
 
-    <footer>
-        <p>&copy; 2024 Hazwan Syahmi. All Rights Reserved.</p>
-    </footer>
+                var tablinks = document.getElementsByClassName("tab-links");
+                var tabcontents = document.getElementsByClassName("tab-contents");
+
+                function opentab(tabname) {
+                    for (tablink of tablinks) {
+                        tablink.classList.remove("active-link");
+                    }
+                    for (tabcontent of tabcontents) {
+                        tabcontent.classList.remove("active-tab");
+                    }
+                    event.currentTarget.classList.add("active-link");
+                    document.getElementById(tabname).classList.add("active-tab");
+                }
+            </Script>
+
+            <script>
+                var sidemenu = document.getElementById("sidemenu");
+                function openmenu() {
+                    sidemenu.style.right = "0";
+                }
+                function closemenu() {
+                    sidemenu.style.right = "-200px";
+                }
+            </script>
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbz3q-_3sCm4DIH_6fUzO05DMQMG5KaUTM3NeFRLsS_eInUyAt8QUJOWusrY05TQnydXBQ/exec'
+                const form = document.forms['submit-to-google-sheet']
+                const msg = document.getElementById("msg")
+
+                form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                        .then(response => {
+                            msg.innerHTML = "Message Sent Succesfully"
+                            setTimeout(function () {
+                                msg.innerHTML = ""
+                            }, 3000)
+                            form.reset()
+                        })
+                        .catch(error => console.error('Error!', error.message))
+                })
+            </script>
 </body>
 
 </html>
