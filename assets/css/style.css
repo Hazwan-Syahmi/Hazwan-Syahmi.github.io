@@ -852,27 +852,30 @@ main {
  */
 
 .download-cv-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically (if necessary) */
   margin: 20px 0;
   /* Add some spacing */
 }
 
 .download-cv-button .button {
   background-color: hsl(35, 100%, 68%);
-  /* Apply the HSL color */
   color: white;
-  /* White text */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  text-align: center;
 }
 
 .download-cv-button .button:hover {
   background-color: hsl(35, 90%, 60%);
-  /* Slightly darker color for hover effect */
 }
+
 
 
 
