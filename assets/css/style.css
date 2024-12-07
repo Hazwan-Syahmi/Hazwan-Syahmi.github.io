@@ -851,29 +851,30 @@ main {
  * download CV button
  */
 
-.download-cv-button {
-  text-decoration: none;
+.download-cv-container {
+  text-align: center;
+  margin: 20px 0;
+  /* Add some spacing */
 }
 
 .download-cv-button .button {
-  background-color: #4CAF50;
-  /* Green background */
+  background-color: hsl(35, 100%, 68%);
+  /* Apply the HSL color */
   color: white;
   /* White text */
   padding: 10px 20px;
-  /* Padding */
   border: none;
-  /* No border */
   border-radius: 5px;
-  /* Rounded corners */
   cursor: pointer;
-  /* Pointer cursor */
+  font-size: 16px;
 }
 
 .download-cv-button .button:hover {
-  background-color: #45a049;
-  /* Darker green on hover */
+  background-color: hsl(35, 90%, 60%);
+  /* Slightly darker color for hover effect */
 }
+
+
 
 
 
