@@ -1178,7 +1178,8 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="https://formspree.io/f/mkgnanzv" method="POST" class="form" data-form id="contact-form">
+          <!-- Update the action to your Formspree link -->
+          <form action="https://formspree.io/f/mkgnanzv" method="POST" class="form" data-form>
 
             <div class="input-wrapper">
               <!-- Full name input -->
@@ -1199,50 +1200,7 @@
 
           </form>
 
-          <!-- Success/Error Message -->
-          <p id="form-message" style="display: none; margin-top: 10px; font-size: 1em;"></p>
-
         </section>
-
-        <script>
-          const form = document.getElementById('contact-form');
-          const messageElement = document.getElementById('form-message');
-
-          form.addEventListener('submit', async function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Show a loading message
-            messageElement.style.display = 'block';
-            messageElement.textContent = 'Sending message...';
-            messageElement.style.color = 'hsl(35, 100%, 68%)';
-
-            try {
-              // Send form data using Fetch API
-              const formData = new FormData(form);
-              const response = await fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { Accept: 'application/json' },
-              });
-
-              if (response.ok) {
-                // Success notification
-                messageElement.textContent = 'Message sent successfully!';
-                messageElement.style.color = 'green';
-                form.reset(); // Clear the form
-              } else {
-                // Error notification
-                messageElement.textContent = 'Failed to send message. Please try again.';
-                messageElement.style.color = 'red';
-              }
-            } catch (error) {
-              // Network or unexpected error
-              messageElement.textContent = 'An error occurred. Please check your connection.';
-              messageElement.style.color = 'red';
-            }
-          });
-        </script>
-
 
 
       </article>
