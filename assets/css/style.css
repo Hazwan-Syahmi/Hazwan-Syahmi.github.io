@@ -569,8 +569,10 @@ main {
 
 .service-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  /* Creates 2 equal columns */
   gap: 20px;
+  /* Adds spacing between the grid items */
 }
 
 .service-item {
@@ -581,6 +583,7 @@ main {
   box-shadow: var(--shadow-2);
   z-index: 1;
 }
+
 
 .service-item::before {
   content: "";
