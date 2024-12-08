@@ -595,14 +595,6 @@ main {
   margin-bottom: 10px;
 }
 
-.service-icon-box ion-icon {
-  font-size: 50px;
-  /* Increases the size of the icon */
-  color: hsl(35, 100%, 68%);
-  /* Applies the desired color */
-}
-
-
 .service-icon-box img {
   margin: auto;
 }
@@ -621,6 +613,7 @@ main {
   font-weight: var(--fw-3);
   line-height: 1.6;
 }
+
 
 
 /**
