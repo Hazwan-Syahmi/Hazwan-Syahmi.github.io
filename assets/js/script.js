@@ -157,3 +157,63 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Snow Effect
+const canvas = document.getElementById('snow-canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let snowflakes = [];
+
+function createSnowflake() {
+  return {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 3 + 1,
+    speedY: Math.random() * 1 + 0.5,
+    opacity: Math.random()
+  };
+}
+
+function drawSnowflakes() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+  ctx.beginPath();
+  snowflakes.forEach(flake => {
+    ctx.moveTo(flake.x, flake.y);
+    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+  });
+  ctx.fill();
+}
+
+function updateSnowflakes() {
+  snowflakes.forEach(flake => {
+    flake.y += flake.speedY;
+    if (flake.y > canvas.height) {
+      flake.y = 0;
+      flake.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function animateSnow() {
+  drawSnowflakes();
+  updateSnowflakes();
+  requestAnimationFrame(animateSnow);
+}
+
+// Start snow only when mouse enters page
+document.addEventListener('mouseenter', () => {
+  if (snowflakes.length === 0) {
+    snowflakes = Array.from({ length: 100 }, createSnowflake);
+    animateSnow();
+  }
+});
+
+// Resize canvas when window changes
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});

@@ -2192,3 +2192,13 @@ textarea.form-input::-webkit-resizer {
   }
 
 }
+
+#snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Supaya canvas tak ganggu klik */
+  z-index: 9999;
+}
