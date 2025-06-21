@@ -7,6 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hazwan Syahmi</title>
 
+  <script>
+  let titleText = " Hazwan Syahmi | ";
+  let speed = 200; // lagi kecil, lagi laju
+
+  function scrollTitle() {
+    document.title = titleText;
+    titleText = titleText.substring(1) + titleText.charAt(0);
+    setTimeout(scrollTitle, speed);
+  }
+
+  scrollTitle();
+</script>
+
+
   <!--
     - favicon
   -->
