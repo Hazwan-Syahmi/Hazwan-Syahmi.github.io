@@ -192,7 +192,7 @@ function updateParticles() {
 
 function drawParticles() {
   cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
-  cursorCtx.fillStyle = "rgba(255, 255, 255, 1)";
+  cursorCtx.fillStyle = "rgb(241, 249, 0)";
   particles.forEach(p => {
     cursorCtx.beginPath();
     cursorCtx.globalAlpha = p.opacity;
