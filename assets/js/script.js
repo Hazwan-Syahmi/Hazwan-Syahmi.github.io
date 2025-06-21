@@ -158,71 +158,68 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-// Snow Effect (trigger once when mouse moves on page)
-const canvas = document.getElementById('snow-canvas');
-const ctx = canvas.getContext('2d');
+// Cursor Snow Trail Effect
+const cursorCanvas = document.getElementById('snow-canvas');
+const cursorCtx = cursorCanvas.getContext('2d');
+cursorCanvas.width = window.innerWidth;
+cursorCanvas.height = window.innerHeight;
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let particles = [];
 
-let snowflakes = [];
-let snowStarted = false;
-
-function createSnowflake() {
+function createParticle(x, y) {
   return {
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 3 + 1,
-    speedY: Math.random() * 1 + 0.5,
-    opacity: Math.random()
+    x,
+    y,
+    radius: Math.random() * 2 + 1,
+    opacity: 1,
+    speedY: Math.random() * 1 - 0.5,
+    speedX: Math.random() * 1 - 0.5
   };
 }
 
-function drawSnowflakes() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-  ctx.beginPath();
-  snowflakes.forEach(flake => {
-    ctx.moveTo(flake.x, flake.y);
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-  });
-  ctx.fill();
-}
+function updateParticles() {
+  for (let i = particles.length - 1; i >= 0; i--) {
+    let p = particles[i];
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.opacity -= 0.02;
 
-function updateSnowflakes() {
-  snowflakes.forEach(flake => {
-    flake.y += flake.speedY;
-    if (flake.y > canvas.height) {
-      flake.y = 0;
-      flake.x = Math.random() * canvas.width;
+    if (p.opacity <= 0) {
+      particles.splice(i, 1);
     }
+  }
+}
+
+function drawParticles() {
+  cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+  cursorCtx.fillStyle = "rgba(255, 255, 255, 1)";
+  particles.forEach(p => {
+    cursorCtx.beginPath();
+    cursorCtx.globalAlpha = p.opacity;
+    cursorCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    cursorCtx.fill();
   });
+  cursorCtx.globalAlpha = 1;
 }
 
-function animateSnow() {
-  drawSnowflakes();
-  updateSnowflakes();
-  requestAnimationFrame(animateSnow);
+function animateParticles() {
+  drawParticles();
+  updateParticles();
+  requestAnimationFrame(animateParticles);
 }
 
-// Start snow only once, on first mouse movement
-document.addEventListener('mousemove', () => {
-  if (!snowStarted) {
-    snowflakes = Array.from({ length: 100 }, createSnowflake);
-    animateSnow();
-    snowStarted = true;
+document.addEventListener('mousemove', (e) => {
+  for (let i = 0; i < 3; i++) {
+    particles.push(createParticle(e.clientX, e.clientY));
   }
 });
 
-// Update canvas size on window resize
+animateParticles();
+
+// Resize canvas on window resize
 window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  cursorCanvas.width = window.innerWidth;
+  cursorCanvas.height = window.innerHeight;
 });
 
-document.addEventListener('mouseleave', () => {
-  snowflakes = [];
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  snowStarted = false;
-});
 
